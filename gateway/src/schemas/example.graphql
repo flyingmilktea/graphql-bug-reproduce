@@ -1,9 +1,13 @@
 type Query {
-  user: User
+  placeholder: Placeholder
+}
+
+type Placeholder {
+  id: ID!
 }
 
 type Mutation {
-    user: User
+  user: User
 }
 
 type User {
