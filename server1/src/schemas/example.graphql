@@ -1,5 +1,6 @@
 type Query {
   placeholder: Placeholder
+  user: User
 }
 
 type Placeholder {

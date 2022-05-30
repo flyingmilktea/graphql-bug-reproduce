@@ -1,3 +1,7 @@
+exports.Query = {
+  user: () => ({}),
+};
+
 exports.Mutation = {
   user: () => ({}),
 };
