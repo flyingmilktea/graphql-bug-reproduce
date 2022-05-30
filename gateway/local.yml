@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: |
   Development:
   ```
-  sam local start-api -t ./local.yml -l message.log --host 0.0.0.0 -p 3001
+  sam local start-api -t ./local.yml -l message.log --host 0.0.0.0 -p 3010
   ```
 Parameters:
   NodeEnv:

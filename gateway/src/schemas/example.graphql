@@ -2,6 +2,10 @@ type Query {
   user: User
 }
 
+type Mutation {
+    user: User
+}
+
 type User {
   gatewayValue: String!
 }

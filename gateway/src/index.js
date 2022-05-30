@@ -22,6 +22,12 @@ const schemaFn = async () => {
         },
         {
           schema: executableSchema,
+          merge: {
+            User: {
+              fieldName: "user",
+              args: (originalObject) => undefined,
+            },
+          },
         },
       ],
       mergeTypes: true, // << default in v7
