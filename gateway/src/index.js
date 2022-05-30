@@ -16,6 +16,7 @@ const schemaFn = async () => {
           merge: {
             User: {
               fieldName: "user",
+              args: (originalObject) => undefined,
             },
           },
         },
