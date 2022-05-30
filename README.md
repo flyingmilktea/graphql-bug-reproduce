@@ -1,2 +1,4 @@
 # graphql-bug-reproduce
-Microserver didnt connect properly bug (return null)
+Microserver didn't connect properly bug (return null)
+
+It happens when didn't return sth in ```args``` under subschemas.merge, even undefined is acceptable.
