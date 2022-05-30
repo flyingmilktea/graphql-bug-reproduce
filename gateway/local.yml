@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: |
+  Development:
+  ```
+  sam local start-api -t ./local.yml -l message.log --host 0.0.0.0 -p 3001
+  ```
+Parameters:
+  NodeEnv:
+    AllowedValues:
+      - "development"
+      - "staging"
+      - "production"
+    Type: String
+Resources:
+  GraphQL:
+    Metadata:
+      WorkaroundSubSSM: !Ref "WorkaroundSubSSM"
+    Properties:
+      CodeUri: ./
+      Description: Local testing
+      Environment:
+        Variables:
+          DISABLE_REMOTE: false
+          NODE_ENV: "development"
+      Events:
+        HttpGet:
+          Properties:
+            Method: GET
+            Path: /graphql
+          Type: Api
+        HttpOptions:
+          Properties:
+            Method: OPTIONS
+            Path: /graphql
+          Type: Api
+        HttpPost:
+          Properties:
+            Method: POST
+            Path: /graphql
+          Type: Api
+      FunctionName: !Sub "${StackSet}-${StackName}-gateway"
+      Handler: src/index.handler
+      MemorySize: 10240
+      PackageType: Zip
+      Runtime: nodejs14.x
+      Timeout: 30
+    Type: AWS::Serverless::Function

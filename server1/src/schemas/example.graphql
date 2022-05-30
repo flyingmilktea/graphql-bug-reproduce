@@ -1,0 +1,7 @@
+type Query {
+  user: User
+}
+
+type User {
+  server1Value: String!
+}
