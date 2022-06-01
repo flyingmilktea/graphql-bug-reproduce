@@ -10,13 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@graphql-tools/graphql-file-loader": "^7.3.9",
-    "@graphql-tools/load": "^7.5.8",
-    "@graphql-tools/schema": "^8.3.8",
-    "@graphql-tools/stitch": "^8.6.9",
-    "backend-graphql-commons": "github:flyingmilktea/backend-graphql-commons",
-    "graphql-scalars": "^1.17.0",
-    "lodash": "^4.17.21"
+    "@graphql-tools/graphql-file-loader": "^7.3.14",
+    "@graphql-tools/load": "^7.5.13",
+    "@graphql-tools/schema": "^8.3.13",
+    "@graphql-tools/stitch": "^8.6.12",
+    "@graphql-yoga/node": "^2.8.0",
+    "@vendia/serverless-express": "^4.8.0",
+    "lodash": "^4.17.21",
+    "mem": "^8.1.1"
   },
   "devDependencies": {
     "aws-sdk": "^2.1118.0"
