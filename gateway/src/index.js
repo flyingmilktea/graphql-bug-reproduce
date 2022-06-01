@@ -31,6 +31,9 @@ const schemaFn = async () => {
         },
       ],
       mergeTypes: true, // << default in v7
+      typeMergingOptions: {
+        fieldConfigMerger: (candidates) => candidates[0].fieldConfig,
+      },
     });
   }
 
