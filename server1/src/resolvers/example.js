@@ -7,5 +7,5 @@ exports.Mutation = {
 };
 
 exports.User = {
-  server1Value: () => `User server1: ${new Date().toISOString()}`,
+  server1Value: (p, a, c, i) => `Server1 User: ${i.operation.operation}`,
 };

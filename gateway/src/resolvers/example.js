@@ -3,5 +3,5 @@ exports.Mutation = {
 };
 
 exports.User = {
-  gatewayValue: () => `gateway User: ${new Date().toISOString()}`,
+  gatewayValue: (p, a, c, i) => `gateway User: ${i.operation.operation}`,
 };
