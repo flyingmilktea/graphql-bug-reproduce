@@ -1,9 +1,8 @@
 const { stitchSchemas } = require("@graphql-tools/stitch");
 
 const { getHandler } = require("./handler");
-
-const executableSchema_s1 = require("./executable-schema_s1");
 const executableSchema = require("./executable-schema");
+const { introspectRemoteSchemas } = require("./remote-schema");
 
 const schemaFn = async () => {
   let mergedSchema = executableSchema;
@@ -12,7 +11,7 @@ const schemaFn = async () => {
     mergedSchema = stitchSchemas({
       subschemas: [
         {
-          schema: executableSchema_s1,
+          schema: await introspectRemoteSchemas(["/server1"]),
           merge: {
             User: {
               fieldName: "user",
