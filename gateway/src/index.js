@@ -14,8 +14,9 @@ const schemaFn = async () => {
           schema: await introspectRemoteSchemas(["/server1"]),
           merge: {
             User: {
-              fieldName: "user",
-              args: (originalObject) => undefined,
+              fieldName: "oneUser",
+              selectionSet: "{ id }",
+              args: (o) => ({ id: o.id }),
             },
           },
         },
@@ -23,8 +24,9 @@ const schemaFn = async () => {
           schema: executableSchema,
           merge: {
             User: {
-              fieldName: "user",
-              args: (originalObject) => undefined,
+              fieldName: "zeroUser",
+              selectionSet: "{ id }",
+              args: (o) => ({ id: o.id }),
             },
           },
         },

@@ -1,9 +1,9 @@
 exports.Query = {
-  user: (p, { id }) => ({ id }),
+  oneUser: (p, { id }) => ({ id }),
 };
 
 exports.Mutation = {
-  user: (p, { id }) => ({ id }),
+  oneUser: (p, { id }) => ({ id }),
 };
 
 exports.User = {
