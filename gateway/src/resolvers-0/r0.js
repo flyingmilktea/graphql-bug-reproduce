@@ -1,3 +1,7 @@
+exports.Query = {
+  zeroUser: (p, { id }) => ({ id }),
+};
+
 exports.Mutation = {
   zeroUser: (p, { id }) => ({ id }),
 };
