@@ -11,5 +11,5 @@ type Mutation {
 }
 
 type User {
-  gatewayValue: String!
+  gatewayValue: String
 }

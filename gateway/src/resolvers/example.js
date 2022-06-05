@@ -3,5 +3,6 @@ exports.Mutation = {
 };
 
 exports.User = {
-  gatewayValue: (p, a, c, i) => `gateway User: ${i.operation.operation}`,
+  gatewayValue: (p, a, c, i) =>
+    `gateway User: ${i.operation.operation} ${Math.random()}`,
 };

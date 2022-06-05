@@ -11,7 +11,7 @@ const getExecutor =
     // TODO: if introspection should retry
     const result = (
       await axios.post(
-        `http://172.17.0.1:3011/graphql`,
+        `http://172.17.0.1:3001/graphql`,
         { query, variables },
         {
           headers: {

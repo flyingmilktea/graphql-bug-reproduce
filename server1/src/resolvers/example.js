@@ -7,5 +7,6 @@ exports.Mutation = {
 };
 
 exports.User = {
-  server1Value: (p, a, c, i) => `Server1 User: ${i.operation.operation}`,
+  server1Value: (p, a, c, i) =>
+    `Server1 User: ${i.operation.operation} ${Math.random()}`,
 };

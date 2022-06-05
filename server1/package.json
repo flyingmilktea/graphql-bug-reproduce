@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade:core": "npm i --save $(jq -r '.dependencies|keys|.[]' package.json)"
   },
   "author": "",
   "license": "ISC",

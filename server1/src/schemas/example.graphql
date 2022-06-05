@@ -12,5 +12,5 @@ type Mutation {
 }
 
 type User {
-  server1Value: String!
+  server1Value: String
 }
