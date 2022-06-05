@@ -1,0 +1,15 @@
+type Query {
+  placeholder: Placeholder
+}
+
+type Placeholder {
+  id: ID!
+}
+
+type Mutation {
+  user: User
+}
+
+type User {
+  zeroValue: String!
+}

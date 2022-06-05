@@ -1,7 +1,7 @@
 const { mergeSchemas } = require("@graphql-tools/schema");
 
-const resolvers = require("./resolvers");
-const schema = require("./schemas");
+const resolvers = require("./resolvers-1");
+const schema = require("./schemas-1");
 
 const executableSchema = mergeSchemas({
   resolvers,

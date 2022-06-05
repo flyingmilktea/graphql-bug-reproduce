@@ -1,20 +1,20 @@
 const { createServer } = require("@graphql-yoga/node");
-const mem = require("mem");
 const { configure } = require("@vendia/serverless-express");
 
-const getHandlerImpl = async ({
+const getHandlerImpl = ({
   schemaFn,
   contextFn,
   createServerOptions = {},
   handlerOptions = {},
 }) => {
-  const schema = await schemaFn();
+  const schema = schemaFn();
 
   const app = createServer({
     context: contextFn,
     schema: schema,
     graphiql: true,
-    logging: process.env.NODE_ENV === "development" ? console : true,
+    logging: true,
+    // logging: console,
     maskedErrors: false,
     ...createServerOptions,
   });
@@ -26,19 +26,4 @@ const getHandlerImpl = async ({
   return handlerImpl;
 };
 
-exports.getHandler = (
-  schemaFn,
-  contextFn,
-  { maxAge, createServerOptions, handlerOptions } = {}
-) => {
-  const cachedGetHandlerImpl = mem(getHandlerImpl, { maxAge });
-  return async (...params) => {
-    const handler = await cachedGetHandlerImpl({
-      schemaFn,
-      contextFn,
-      createServerOptions,
-      handlerOptions,
-    });
-    return handler(...params);
-  };
-};
+exports.getHandler = (schemaFn) => getHandlerImpl({ schemaFn });

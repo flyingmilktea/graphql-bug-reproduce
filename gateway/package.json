@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade:core": "npm i --omit=peer --save $(jq -r '.dependencies|keys|.[]' package.json)"
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +17,7 @@
     "@graphql-tools/stitch": "^8.6.12",
     "@graphql-yoga/node": "^2.8.0",
     "@vendia/serverless-express": "^4.8.0",
-    "lodash": "^4.17.21",
-    "mem": "^8.1.1",
-    "axios": "^0.25.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "aws-sdk": "^2.1118.0"
