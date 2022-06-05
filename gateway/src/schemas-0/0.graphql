@@ -7,9 +7,11 @@ type Placeholder {
 }
 
 type Mutation {
-  user: User
+  zeroUser(id: ID): User
 }
 
 type User {
-  zeroValue: String!
+  id: ID!
+  zeroValue: String
+  user: User!
 }

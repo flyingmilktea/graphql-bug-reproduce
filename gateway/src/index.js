@@ -8,20 +8,22 @@ const schemaFn = () => {
   const mergedSchema = stitchSchemas({
     subschemas: [
       {
-        schema: executableSchema0,
+        schema: executableSchema1,
         merge: {
           User: {
-            fieldName: "user",
-            args: () => undefined,
+            fieldName: "oneUser",
+            selectionSet: "{ id }",
+            args: (o) => ({ id: o.id }),
           },
         },
       },
       {
-        schema: executableSchema1,
+        schema: executableSchema0,
         merge: {
           User: {
-            fieldName: "user",
-            args: () => undefined,
+            fieldName: "zeroUser",
+            selectionSet: "{ id }",
+            args: (o) => ({ id: o.id }),
           },
         },
       },
