@@ -6,4 +6,4 @@ const schemaFn = () => {
   return executableSchema;
 };
 
-exports.handler = getHandler(schemaFn, () => ({}), 60000);
+exports.handler = getHandler(schemaFn);
