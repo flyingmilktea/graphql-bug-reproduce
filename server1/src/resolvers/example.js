@@ -1,12 +1,13 @@
 exports.Query = {
-  user: () => ({}),
+  user: (p, { id }) => ({ id }),
 };
 
 exports.Mutation = {
-  user: () => ({}),
+  user: (p, { id }) => ({ id }),
 };
 
 exports.User = {
-  server1Value: (p, a, c, i) =>
-    `Server1 User: ${i.operation.operation} ${Math.random()}`,
+  oneValue: (p, a, c, i) =>
+    `1: User: ${i.operation.operation} ${Math.random()}`,
+  user: ({ id }) => ({ id }),
 };

@@ -1,8 +1,13 @@
+exports.Query = {
+  user: (p, { id }) => ({ id }),
+};
+
 exports.Mutation = {
-  user: () => ({}),
+  user: (p, { id }) => ({ id }),
 };
 
 exports.User = {
-  gatewayValue: (p, a, c, i) =>
-    `gateway User: ${i.operation.operation} ${Math.random()}`,
+  zeroValue: (p, a, c, i) =>
+    `0: User: ${i.operation.operation} ${Math.random()}`,
+  user: ({ id }) => ({ id }),
 };
