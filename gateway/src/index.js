@@ -18,7 +18,7 @@ const schemaFn = async () => {
         },
       },
       {
-        schema: await introspectRemoteSchemas(["/server1"]),
+        schema: await introspectRemoteSchemas("/server1"),
         merge: {
           User: {
             fieldName: "oneUser",

@@ -1,5 +1,4 @@
 const { print } = require("graphql");
-const { mergeSchemas } = require("@graphql-tools/schema");
 const { introspectSchema, wrapSchema } = require("@graphql-tools/wrap");
 
 const axios = require("axios").default;
@@ -23,19 +22,13 @@ const getExecutor =
     return result;
   };
 
-const introspectRemoteSchemas = async (remotePrefixes) => {
-  const schemas = await Promise.all(
-    remotePrefixes.map(async (prefix) => {
-      const executor = getExecutor(prefix);
-      const schema = wrapSchema({
-        schema: await introspectSchema(executor),
-        executor,
-      });
-      return schema;
-    })
-  );
-  const merged = mergeSchemas({ schemas });
-  return merged;
+const introspectRemoteSchemas = async (prefix) => {
+  const executor = getExecutor(prefix);
+  const schema = wrapSchema({
+    schema: await introspectSchema(executor),
+    executor,
+  });
+  return schema;
 };
 
 exports.introspectRemoteSchemas = introspectRemoteSchemas;
