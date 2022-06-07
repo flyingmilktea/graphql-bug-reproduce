@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "upgrade:core": "npm i --save $(jq -r '.dependencies|keys|.[]' package.json)"
+    "upgrade:core": "npm i --save $(jq -r '.dependencies|keys|.[]' package.json)",
+    "postinstall": "cat node_modules-graphql-tools-stitch.patch | patch -p3 -N -d node_modules/@graphql-tools/stitch || true"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +16,14 @@
     "@graphql-tools/load": "^7.5.13",
     "@graphql-tools/schema": "^8.3.13",
     "@graphql-tools/stitch": "^8.6.12",
-    "@graphql-yoga/node": "^2.8.0",
+    "@graphql-yoga/node": "^2.9.0",
     "@vendia/serverless-express": "^4.8.0",
     "axios": "^0.27.2",
-    "lodash": "^4.17.21"
+    "graphql-scalars": "^1.17.0",
+    "lodash": "^4.17.21",
+    "mem": "^8.1.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1118.0"
   }
 }
