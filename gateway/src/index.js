@@ -12,8 +12,7 @@ const schemaFn = () => {
         merge: {
           User: {
             fieldName: "oneUser",
-            selectionSet: "{ id }",
-            args: (o) => ({ id: o.id }),
+            args: () => undefined,
           },
         },
       },
@@ -22,8 +21,7 @@ const schemaFn = () => {
         merge: {
           User: {
             fieldName: "zeroUser",
-            selectionSet: "{ id }",
-            args: (o) => ({ id: o.id }),
+            args: () => undefined,
           },
         },
       },

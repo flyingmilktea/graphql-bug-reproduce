@@ -1,6 +1,6 @@
 type Query {
   placeholder: Placeholder
-  zeroUser(id: ID): User
+  zeroUser: User
 }
 
 type Placeholder {
@@ -8,7 +8,7 @@ type Placeholder {
 }
 
 type Mutation {
-  zeroUser(id: ID): User
+  zeroUser: User
 }
 
 type User {

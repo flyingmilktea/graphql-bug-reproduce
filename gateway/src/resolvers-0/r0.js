@@ -1,12 +1,12 @@
 exports.Query = {
-  zeroUser: (p, { id }) => ({ id }),
+  zeroUser: () => ({}),
 };
 
 exports.Mutation = {
-  zeroUser: (p, { id }) => ({ id }),
+  zeroUser: () => ({}),
 };
 
 exports.User = {
   zeroValue: (p, a, c, i) => `0: User: ${i.operation.operation}`,
-  user: ({ id }) => ({ id }),
+  user: () => ({}),
 };
