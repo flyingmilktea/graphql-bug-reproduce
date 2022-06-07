@@ -12,8 +12,6 @@ const schemaFn = async () => {
         merge: {
           User: {
             fieldName: "zeroUser",
-            selectionSet: "{ id }",
-            args: (o) => ({ id: o.id }),
           },
         },
       },
@@ -22,8 +20,6 @@ const schemaFn = async () => {
         merge: {
           User: {
             fieldName: "oneUser",
-            selectionSet: "{ id }",
-            args: (o) => ({ id: o.id }),
           },
         },
       },
