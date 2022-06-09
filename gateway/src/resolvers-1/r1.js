@@ -8,5 +8,5 @@ exports.Mutation = {
 
 exports.User = {
   oneValue: (p, a, c, i) => `1: User: ${i.operation.operation}`,
-  user: ({ id }) => ({ id }),
+  oneUser: ({ id }) => ({ id }),
 };
