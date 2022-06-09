@@ -1,3 +1,5 @@
+union User = UserA | UserB
+
 type Query {
   placeholder: Placeholder
   oneUser(id: ID!): User
@@ -11,8 +13,12 @@ type Mutation {
   oneUser(id: ID!): User
 }
 
-type User {
+type UserA {
+  id: ID!
+}
+
+type UserB {
   id: ID!
   oneValue: String
-  oneUser: User!
+  oneUser: User
 }

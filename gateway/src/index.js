@@ -15,12 +15,22 @@ const schemaFn = () => {
             selectionSet: "{ id }",
             args: (o) => ({ id: o.id }),
           },
+          UserB: {
+            fieldName: "oneUser",
+            selectionSet: "{ id }",
+            args: (o) => ({ id: o.id }),
+          },
         },
       },
       {
         schema: executableSchema0,
         merge: {
           User: {
+            fieldName: "zeroUser",
+            selectionSet: "{ id }",
+            args: (o) => ({ id: o.id }),
+          },
+          UserA: {
             fieldName: "zeroUser",
             selectionSet: "{ id }",
             args: (o) => ({ id: o.id }),

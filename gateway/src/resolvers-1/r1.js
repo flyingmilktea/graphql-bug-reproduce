@@ -1,12 +1,12 @@
 exports.Query = {
-  oneUser: (p, { id }) => ({ id }),
+  oneUser: (p, { id }) => ({ __typename: "UserB", id }),
 };
 
 exports.Mutation = {
-  oneUser: (p, { id }) => ({ id }),
+  oneUser: (p, { id }) => ({ __typename: "UserB", id }),
 };
 
-exports.User = {
-  oneValue: (p, a, c, i) => `1: User: ${i.operation.operation}`,
-  oneUser: ({ id }) => ({ id }),
+exports.UserB = {
+  oneValue: (p, a, c, i) => `1: UserB: ${i.operation.operation}`,
+  oneUser: ({ id }) => ({ __typename: "UserA", id }),
 };
