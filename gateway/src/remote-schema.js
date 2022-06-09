@@ -1,5 +1,5 @@
 const { print } = require("graphql");
-const { introspectSchema, wrapSchema } = require("@graphql-tools/wrap");
+const { introspectSchema } = require("@graphql-tools/wrap");
 
 const axios = require("axios").default;
 
@@ -23,12 +23,9 @@ const getExecutor =
   };
 
 const introspectRemoteSchemas = async (prefix) => {
-  const executor = getExecutor(prefix);
-  const schema = wrapSchema({
-    schema: await introspectSchema(executor),
-    executor,
-  });
+  const schema = await introspectSchema(getExecutor(prefix));
   return schema;
 };
 
+exports.getExecutor = getExecutor;
 exports.introspectRemoteSchemas = introspectRemoteSchemas;
